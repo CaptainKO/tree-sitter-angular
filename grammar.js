@@ -2,7 +2,7 @@ const PREC = {
   CALL: 1,
   ALIAS: 2
 };
-// const parents = /(([^{}])|(((?<!{){(?!{)))|((?<!})}(?!})))*/;
+
 module.exports = grammar({
   name: "angular",
   rules: {
