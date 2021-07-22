@@ -2,16 +2,15 @@ const PREC = {
   CALL: 1,
   ALIAS: 2
 };
-
 module.exports = grammar({
   name: "angular",
   rules: {
     program: $ => repeat($._definition),
     _definition: $ => choice(
+      $.parentheses_express,
       $.structural_declaration,
       $._any_expression,
       $.assignment_expression,
-      $.parentheses_express,
     ),
     _any_expression: $ => choice(
       $.binary_expression,
